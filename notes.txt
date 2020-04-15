@@ -24,3 +24,9 @@ En este curso es el primer paso para convertirte en un profesional de Javascript
  - Ética / Profesionalismo
  - Experiencia.
 Y recuerda que puedes encontrar a tu profesor en twitter como @sparragus.
+**************************************************************************************************************
+Inicio del proyecto
+--------------------------------------------------------------------------------------------------------------
+Trabajaremos en el proyecto PlatziVideo, una plataforma de vídeo.
+Esta es la base de nuestro proyecto y nos vamos a enfocar en el MediaPlayer. Durante el curso se desarrollarán plugins de forma modular para extender la funcionalidad del MediaPlayer.
+El repositorio de este curso lo encuentras en: https://github.com/platzi/javascript-profesional
