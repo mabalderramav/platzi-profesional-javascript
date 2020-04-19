@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Scope</title>
+</head>
+<body>
+    <a href="/Ejercicios/">Go Back</a>
+    <p><em>Open to console</em></p>
+    <script>
+        // Global Scopoe
+        var message = 'Hello, plazti';
+        // Function Scope
+
+        // function printNumbers(){
+        //     var index;
+        //     for (index = 0; index < 10; index++) {
+        //         function eventuallyPrintNumber(n){
+        //             setTimeout(function(){
+        //                 console.log(n);
+        //             }, 100);
+        //         }
+
+        //         eventuallyPrintNumber(index);
+        //     }
+        // }
+
+        // printNumbers();
+
+        // Block Scope
+        function printNumbers2(){
+            for (let index = 0; index < 10; index++) {
+                setTimeout(function(){
+                    console.log(index);
+                }, 100);
+            }
+        }
+
+        printNumbers2();
+        // Module Scope
+        
+    </script>
+</body>
+</html>
