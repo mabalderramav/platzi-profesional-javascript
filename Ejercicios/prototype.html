@@ -1,0 +1,149 @@
+<html>
+    <head>
+        <title>Prototype</title>
+    </head>
+
+    <body>
+        <a href="/ejercicios/">Go back</a>
+        <p>
+            <em>Abre la consola</em>
+        </p>
+
+        <script>
+            // Un objeto común y corriente
+            // const thord = {
+            //     name: 'Thord'
+            // };
+
+            // thord.saludar = function () {
+            //     console.log(`Hola soy ${
+            //         this.name
+            //     }`);
+            // };
+
+            // thord.saludar();
+
+            // // Otro objeto más
+            // const hulk = {
+            //     name: 'Hulk'
+            // };
+
+            // hulk.saludar = function () {
+            //     console.log(`Hola soy ${
+            //         this.name
+            //     }`);
+            // };
+
+            // hulk.saludar();
+            // Seamos un poco más eficientes
+            // function Hero(name) {
+            //     const hero = {
+            //         name: name
+            //     }
+
+            //     hero.saludar = function () {
+            //         console.log(`Hola soy ${
+            //             this.name
+            //         }`);
+            //     };
+
+            //     return hero;
+            // };
+
+            // const thord = Hero('Thord')
+            // thord.saludar();
+
+            // const hulk = Hero('Hulk')
+            // hulk.saludar();
+
+            // Aun podemos mejorar más y evitar tener que crear la misma función cada vez
+            // const heroMethods = {
+            //     saludar: function () {
+            //         console.log(`Me llamo ${
+            //             this.name
+            //         }`);
+            //     }
+            // }
+            // function Hero(name) {
+            //     const hero = {
+            //         name: name
+            //     }
+
+            //     hero.saludar = heroMethods.saludar;
+
+            //     return hero;
+            // };
+
+            // const thord = Hero('Thord')
+            // thord.saludar();
+
+            // const hulk = Hero('Hulk')
+            // hulk.saludar();
+            // Object.create
+            // const nuevoObjeto = Object.create(objeto);
+            // const heroMethods = {
+            //     saludar: function () {
+            //         console.log(`Soy superheroe ${
+            //             this.name
+            //         }`);
+            //     }
+            // }
+            // function Hero(name) {
+            //     const hero = Object.create(heroMethods)
+            //     hero.name = name;
+            //     return hero;
+            // };
+
+            // const thord = Hero('Thord')
+            // thord.saludar();
+
+            // const hulk = Hero('Hulk')
+            // hulk.saludar();
+            // Los métodos de hero dentro de Hero
+            // const heroMethods = {
+            //     saludar: function () {
+            //         console.log(`Soy superheroe ${
+            //             this.name
+            //         }`);
+            //     }
+            // }
+
+            // function Hero(name) {
+            //     const hero = Object.create(Hero.prototype)
+            //     hero.name = name;
+            //     return hero;
+            // };
+
+            // Hero.prototype.saludar = function () {
+            //     console.log(`Soy superheroe!!! ${
+            //         this.name
+            //     }`);
+            // }
+
+            // const thord = Hero('Thord')
+            // thord.saludar();
+
+            // const hulk = Hero('Hulk')
+            // hulk.saludar();
+
+            // new es un atajo (azucar sintactica) para llevar Hero.prototype al objeto que estamos creando
+            function Hero(name) {
+                // const hero = Object.create(Hero.prototype)
+                this.name = name;
+                // return this;
+            };
+
+            Hero.prototype.saludar = function () {
+                console.log(`New: ${
+                    this.name
+                }`);
+            }
+
+            const thord = new Hero('Thord')
+            thord.saludar();
+
+            const hulk = new Hero('Hulk')
+            hulk.saludar();
+        </script>
+    </body>
+</html>
