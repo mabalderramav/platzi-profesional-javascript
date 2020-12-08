@@ -1,3 +1,5 @@
+const VERSION = "v1";
+
 self.addEventListener("install", (event) => {
   event.waitUntil(precache());
 });
@@ -17,7 +19,7 @@ self.addEventListener("fetch", (event) => {
 });
 
 async function precache() {
-  const cache = await caches.open("v1");
+  const cache = await caches.open(VERSION);
   return cache.addAll([
     "/",
     "/index.html",
@@ -31,13 +33,13 @@ async function precache() {
 }
 
 async function cacheResponse(request){
-  const cache = await caches.open("v1");
+  const cache = await caches.open(VERSION);
   const response = await cache.match(request);
   return response || fetch(request);
 }
 
 async function updateCache(request){
-  const cache = await caches.open("v1");
+  const cache = await caches.open(VERSION);
   const response = await fetch(request);
   return cache.put(request, response);
 }
