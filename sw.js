@@ -13,9 +13,9 @@ self.addEventListener("fetch", (event) => {
   }
 
   // Finds in cache.
-  event.respondWith(cacheResponse(request));
+  // event.respondWith(cacheResponse(request));
   // Actualizar el cache
-  event.waitUntil(updateCache(request));
+  // event.waitUntil(updateCache(request));
 });
 
 async function precache() {
@@ -38,8 +38,8 @@ async function cacheResponse(request){
   return response || fetch(request);
 }
 
-async function updateCache(request){
-  const cache = await caches.open(VERSION);
-  const response = await fetch(request);
-  return cache.put(request, response);
-}
+// async function updateCache(request){
+//   const cache = await caches.open(VERSION);
+//   const response = await fetch(request);
+//   return cache.put(request, response);
+// }
